@@ -1,0 +1,694 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17156"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Application-->
+        <scene sceneID="JPo-4y-FX3">
+            <objects>
+                <application id="hnw-xV-0zn" sceneMemberID="viewController">
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+                        <items>
+                            <menuItem title="WindowSnap" id="1Xt-HY-uBw">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="WindowSnap" systemMenu="apple" id="uQy-DD-JDr">
+                                    <items>
+                                        <menuItem title="About WindowSnap" id="5kV-Vb-QxS">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="aboutMenuItemDidClicked:" target="Voe-Tx-rLC" id="3mN-fu-uhm"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="How to use WindowSnap" id="b79-ua-CGc">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="helpMenuItemDidClicked:" target="Voe-Tx-rLC" id="yuj-1l-Sof"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
+                                        <menuItem title="Launch at login" id="ur5-ec-dr6">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="toggleRunAtLogin:" target="Voe-Tx-rLC" id="CJ1-8s-8C6"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Setting" id="JZc-Lz-Nu2">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="shortcutSettingMenuItemDidClicked:" target="Voe-Tx-rLC" id="fa8-SW-dJm"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
+                                        <menuItem title="Show DeskTop" tag="1" keyEquivalent="d" id="bjN-bO-y16">
+                                            <modifierMask key="keyEquivalentModifierMask" control="YES"/>
+                                            <connections>
+                                                <action selector="showDeskTopMenuItemDidClicked:" target="Voe-Tx-rLC" id="PUc-bE-rBJ"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Minimized All Window" keyEquivalent="m" id="mGE-c3-r8X">
+                                            <modifierMask key="keyEquivalentModifierMask" control="YES"/>
+                                            <connections>
+                                                <action selector="minimizedAllWindowMenuItemDidClicked:" target="Voe-Tx-rLC" id="NBJ-YN-4ff"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="koc-OF-1tU"/>
+                                        <menuItem title="Quit WindowSnap" keyEquivalent="q" id="4sb-4s-VLi">
+                                            <connections>
+                                                <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
+                    </connections>
+                </application>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="WindowSnap" customModuleProvider="target">
+                    <connections>
+                        <outlet property="aboutMenu" destination="5kV-Vb-QxS" id="FGM-le-4eg"/>
+                        <outlet property="helpMenu" destination="b79-ua-CGc" id="puL-8C-Gmc"/>
+                        <outlet property="launchAtLoginMenu" destination="ur5-ec-dr6" id="Dpx-dm-eQK"/>
+                        <outlet property="menu" destination="uQy-DD-JDr" id="Tuh-V6-mgX"/>
+                        <outlet property="shortcutSettingMenu" destination="JZc-Lz-Nu2" id="ZRf-DW-7VH"/>
+                    </connections>
+                </customObject>
+                <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+                <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-434" y="-184"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="tHH-CA-qKN">
+            <objects>
+                <viewController storyboardIdentifier="DFAboutViewControllerID" id="S5I-Qz-F8i" customClass="DFAboutViewController" customModule="WindowSnap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="Nea-FZ-SRc">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lBi-tU-tsR">
+                                <rect key="frame" x="183" y="180" width="86" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSNetwork" id="KAG-jk-g5d"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XfI-9A-GWD">
+                                <rect key="frame" x="-2" y="142" width="454" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="WindowSnap" id="BrX-tj-h6k">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JXK-8I-3Iq">
+                                <rect key="frame" x="-2" y="84" width="454" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="V1.0(Build:1)" id="Q32-Zj-3mj">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TaC-Ch-g9b">
+                                <rect key="frame" x="-2" y="36" width="454" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Create by DevilFinger Team on 2020/12/30." id="O7V-AW-h3c">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="appNameLbl" destination="XfI-9A-GWD" id="LcC-iS-kp2"/>
+                        <outlet property="iconImageView" destination="lBi-tU-tsR" id="WNF-QZ-M14"/>
+                        <outlet property="teamNameLbl" destination="TaC-Ch-g9b" id="HLo-gs-akZ"/>
+                        <outlet property="versionLbl" destination="JXK-8I-3Iq" id="8wM-NS-fi3"/>
+                    </connections>
+                </viewController>
+                <customObject id="3On-gs-WLo" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-232" y="25"/>
+        </scene>
+        <!--Help View Controller-->
+        <scene sceneID="J6F-Ww-Cjl">
+            <objects>
+                <viewController storyboardIdentifier="DFHelpViewControllerID" id="ZgX-yP-mkb" customClass="DFHelpViewController" customModule="WindowSnap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="lRj-He-Oij">
+                        <rect key="frame" x="0.0" y="0.0" width="732" height="780"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2zI-6N-hek">
+                                <rect key="frame" x="36" y="147" width="661" height="542"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSColorPanel" id="jNE-jJ-Ccd"/>
+                            </imageView>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AIb-Gn-Na0">
+                                <rect key="frame" x="121" y="75" width="28" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSGoLeftTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="aAv-02-Duv">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="preBtnDidClicked:" target="ZgX-yP-mkb" id="Z46-SS-aSx"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tik-1E-2Aj">
+                                <rect key="frame" x="146" y="78" width="428" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="1 / 10" id="j03-y6-cFI">
+                                    <font key="font" metaFont="system" size="18"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OvZ-fI-KGk">
+                                <rect key="frame" x="34" y="744" width="92" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" selectable="YES" title="Multiline Label" id="oY5-Ef-h9T">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DNG-vE-q5f">
+                                <rect key="frame" x="587" y="75" width="28" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSGoRightTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="dpD-ud-krb">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="nextBtnDidClicked:" target="ZgX-yP-mkb" id="Z6r-UI-4Hm"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q43-ko-iXG">
+                                <rect key="frame" x="18" y="18" width="155" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="我懂了，下次不再显示" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="jOe-aW-9Tn">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="checkBtnDidClicked:" target="ZgX-yP-mkb" id="b1e-FJ-Rtf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="checkBtn" destination="Q43-ko-iXG" id="Bus-si-eXc"/>
+                        <outlet property="imageView" destination="2zI-6N-hek" id="RgR-XW-srS"/>
+                        <outlet property="multiLineLbl" destination="OvZ-fI-KGk" id="bRH-gd-JPq"/>
+                        <outlet property="nextImageBtn" destination="DNG-vE-q5f" id="oYR-6Q-fKl"/>
+                        <outlet property="preImageBtn" destination="AIb-Gn-Na0" id="fSs-KC-W6n"/>
+                        <outlet property="stepLbl" destination="Tik-1E-2Aj" id="a5S-Jp-XVa"/>
+                    </connections>
+                </viewController>
+                <customObject id="Vdi-qb-Mkd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="380" y="102"/>
+        </scene>
+        <!--Short Cut View Controller-->
+        <scene sceneID="t2z-Mi-Tun">
+            <objects>
+                <viewController storyboardIdentifier="DFShortCutViewControllerID" id="POJ-O2-DLd" customClass="DFShortCutViewController" customModule="WindowSnap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="niL-da-N4U">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="728"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <tabView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xb4-ZT-Kmb">
+                                <rect key="frame" x="23" y="93" width="571" height="608"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <font key="font" metaFont="system"/>
+                                <tabViewItems>
+                                    <tabViewItem label="通用设置" identifier="" id="Rjz-ea-gAM">
+                                        <view key="view" id="NNc-D1-iSq">
+                                            <rect key="frame" x="10" y="33" width="551" height="562"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kIH-f0-Suh">
+                                                    <rect key="frame" x="83" y="197" width="97" height="16"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <textFieldCell key="cell" lineBreakMode="clipping" id="OsK-Oq-ZVg">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4em-4y-B5a">
+                                                    <rect key="frame" x="81" y="165" width="97" height="16"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <textFieldCell key="cell" lineBreakMode="clipping" id="Gj6-yA-5t1">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                                <box fixedFrame="YES" title="开启鼠标区域黏贴：" translatesAutoresizingMaskIntoConstraints="NO" id="B4H-se-Oe4">
+                                                    <rect key="frame" x="11" y="429" width="523" height="114"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <view key="contentView" id="I6y-x6-swh">
+                                                        <rect key="frame" x="3" y="3" width="517" height="96"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mzl-ww-W0o">
+                                                                <rect key="frame" x="18" y="56" width="49" height="18"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                <buttonCell key="cell" type="check" title="顶部" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="DIv-Ef-cl6">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                                <connections>
+                                                                    <action selector="mouseAreaCheckBoxDidClicked:" target="POJ-O2-DLd" id="OZQ-mo-hxx"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ry6-ft-mpt">
+                                                                <rect key="frame" x="97" y="56" width="49" height="18"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                <buttonCell key="cell" type="check" title="底部" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="HyT-Vm-5tN">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                                <connections>
+                                                                    <action selector="mouseAreaCheckBoxDidClicked:" target="POJ-O2-DLd" id="dfr-1w-pOn"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wgD-iS-StA">
+                                                                <rect key="frame" x="18" y="15" width="62" height="18"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                <buttonCell key="cell" type="check" title="左上角" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="LNC-O2-R3d">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                                <connections>
+                                                                    <action selector="mouseAreaCheckBoxDidClicked:" target="POJ-O2-DLd" id="SMC-Wy-Q1S"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EHZ-99-AFA">
+                                                                <rect key="frame" x="175" y="56" width="49" height="18"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                <buttonCell key="cell" type="check" title="左侧" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="i93-2R-alm">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                                <connections>
+                                                                    <action selector="mouseAreaCheckBoxDidClicked:" target="POJ-O2-DLd" id="yLh-XR-Dxt"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oc4-K7-7hk">
+                                                                <rect key="frame" x="97" y="15" width="62" height="18"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                <buttonCell key="cell" type="check" title="左下角" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="wMz-dN-CE9">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                                <connections>
+                                                                    <action selector="mouseAreaCheckBoxDidClicked:" target="POJ-O2-DLd" id="0u8-Ja-Ud8"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q9b-bg-qgv">
+                                                                <rect key="frame" x="175" y="15" width="62" height="18"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                <buttonCell key="cell" type="check" title="右上角" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Dk1-lh-Ibp">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                                <connections>
+                                                                    <action selector="mouseAreaCheckBoxDidClicked:" target="POJ-O2-DLd" id="OgC-tB-2u1"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ax1-mg-7Aa">
+                                                                <rect key="frame" x="254" y="56" width="49" height="18"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                <buttonCell key="cell" type="check" title="右侧" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="ocW-eZ-A2Z">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                                <connections>
+                                                                    <action selector="mouseAreaCheckBoxDidClicked:" target="POJ-O2-DLd" id="hvD-bL-KM3"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gy6-cM-kD6">
+                                                                <rect key="frame" x="254" y="15" width="62" height="18"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                <buttonCell key="cell" type="check" title="右下角" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="cTO-ka-f94">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                                <connections>
+                                                                    <action selector="mouseAreaCheckBoxDidClicked:" target="POJ-O2-DLd" id="B4F-cM-amY"/>
+                                                                </connections>
+                                                            </button>
+                                                            <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="v8h-W0-MuA">
+                                                                <rect key="frame" x="20" y="44" width="477" height="5"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            </box>
+                                                        </subviews>
+                                                    </view>
+                                                </box>
+                                                <box fixedFrame="YES" title="顶部黏贴大小：" translatesAutoresizingMaskIntoConstraints="NO" id="tHQ-tz-K4G">
+                                                    <rect key="frame" x="11" y="251" width="523" height="114"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <view key="contentView" id="o3h-FH-1er">
+                                                        <rect key="frame" x="3" y="3" width="517" height="96"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d2x-Qg-iIk">
+                                                                <rect key="frame" x="221" y="38" width="76" height="18"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                <buttonCell key="cell" type="radio" title="上半屏幕" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="pGS-wl-epC">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                                <connections>
+                                                                    <action selector="topAreaRadioDidClicked:" target="POJ-O2-DLd" id="eeJ-0a-9dG"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wrg-ST-4xx">
+                                                                <rect key="frame" x="382" y="38" width="76" height="18"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                <buttonCell key="cell" type="radio" title="下半屏幕" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="Ahl-sW-hqi">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                                <connections>
+                                                                    <action selector="topAreaRadioDidClicked:" target="POJ-O2-DLd" id="2Sp-Rj-HNa"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IDn-wC-Y7g">
+                                                                <rect key="frame" x="71" y="38" width="49" height="18"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                <buttonCell key="cell" type="radio" title="全屏" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="kJH-Vf-690">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                                <connections>
+                                                                    <action selector="topAreaRadioDidClicked:" target="POJ-O2-DLd" id="YLH-D6-mo4"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </view>
+                                                </box>
+                                                <box fixedFrame="YES" title="底部黏贴区域：" translatesAutoresizingMaskIntoConstraints="NO" id="0hi-As-KK3">
+                                                    <rect key="frame" x="6" y="85" width="523" height="114"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <view key="contentView" id="hpc-7g-rNs">
+                                                        <rect key="frame" x="3" y="3" width="517" height="96"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bjK-1C-IFw">
+                                                                <rect key="frame" x="221" y="38" width="76" height="18"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                <buttonCell key="cell" type="radio" title="上半屏幕" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="GKl-iw-EZE">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                                <connections>
+                                                                    <action selector="bottomAreaRadioDidClicked:" target="POJ-O2-DLd" id="nhV-F2-bEI"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P2l-Tf-iNv">
+                                                                <rect key="frame" x="390" y="38" width="76" height="18"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                <buttonCell key="cell" type="radio" title="下半屏幕" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="QvS-5A-oP7">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                                <connections>
+                                                                    <action selector="bottomAreaRadioDidClicked:" target="POJ-O2-DLd" id="xNg-kw-ahV"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q7G-Ck-024">
+                                                                <rect key="frame" x="76" y="38" width="49" height="18"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                <buttonCell key="cell" type="radio" title="全屏" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="5RG-8R-73D">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                                <connections>
+                                                                    <action selector="bottomAreaRadioDidClicked:" target="POJ-O2-DLd" id="rjL-r4-OlU"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </view>
+                                                </box>
+                                            </subviews>
+                                        </view>
+                                    </tabViewItem>
+                                    <tabViewItem label="快捷键设置" identifier="" id="PDG-2p-L9P">
+                                        <view key="view" id="i9U-xr-HWa">
+                                            <rect key="frame" x="10" y="33" width="551" height="562"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zGZ-5E-3GZ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="550" height="550"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <subviews>
+                                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5r3-fw-6lU" customClass="MASShortcutView">
+                                                            <rect key="frame" x="252" y="420" width="90" height="19"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        </customView>
+                                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ceg-6v-j90" customClass="MASShortcutView">
+                                                            <rect key="frame" x="50" y="111" width="90" height="19"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        </customView>
+                                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cVu-KZ-PPS" customClass="MASShortcutView">
+                                                            <rect key="frame" x="58" y="266" width="90" height="19"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        </customView>
+                                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4aP-ah-VWH" customClass="MASShortcutView">
+                                                            <rect key="frame" x="455" y="266" width="90" height="19"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        </customView>
+                                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="06g-gJ-r2X" customClass="MASShortcutView">
+                                                            <rect key="frame" x="455" y="420" width="90" height="19"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        </customView>
+                                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9MS-cd-xhf" customClass="MASShortcutView">
+                                                            <rect key="frame" x="252" y="111" width="90" height="19"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        </customView>
+                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1mf-0b-Qb8">
+                                                            <rect key="frame" x="248" y="364" width="48" height="48"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSTouchBarGoUpTemplate" id="1jm-xK-fKu"/>
+                                                        </imageView>
+                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1hu-14-RSo">
+                                                            <rect key="frame" x="360" y="252" width="48" height="48"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSTouchBarGoForwardTemplate" id="1i2-Vx-Enk"/>
+                                                        </imageView>
+                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K5I-mg-wCN">
+                                                            <rect key="frame" x="360" y="136" width="48" height="48"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSTouchBarGoForwardTemplate" id="vCw-XT-oYf"/>
+                                                        </imageView>
+                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="chx-e0-Eom">
+                                                            <rect key="frame" x="360" y="364" width="48" height="48"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSTouchBarGoForwardTemplate" id="osX-jy-TTM"/>
+                                                        </imageView>
+                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ff0-Ds-QcJ">
+                                                            <rect key="frame" x="248" y="136" width="48" height="48"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSTouchBarGoDownTemplate" id="zsA-lx-p2o"/>
+                                                        </imageView>
+                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nK5-tS-HvN">
+                                                            <rect key="frame" x="132" y="252" width="48" height="48"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSTouchBarGoBackTemplate" id="V8F-Tn-raX"/>
+                                                        </imageView>
+                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DcR-2D-xvI">
+                                                            <rect key="frame" x="132" y="364" width="48" height="48"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSTouchBarGoBackTemplate" id="v7U-VM-76X"/>
+                                                        </imageView>
+                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vsz-3i-KBR">
+                                                            <rect key="frame" x="132" y="136" width="48" height="48"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSTouchBarGoBackTemplate" id="QZd-5U-ijB"/>
+                                                        </imageView>
+                                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5vY-II-75V">
+                                                            <rect key="frame" x="3" y="267" width="49" height="18"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <buttonCell key="cell" type="check" title="开启" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="EFe-Lh-PPh">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="checkBoxDidClicked:" target="POJ-O2-DLd" id="ZvQ-pf-cPM"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3zd-wo-A9T">
+                                                            <rect key="frame" x="-2" y="112" width="49" height="18"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <buttonCell key="cell" type="check" title="开启" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="1FA-F6-TD4">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="checkBoxDidClicked:" target="POJ-O2-DLd" id="2oH-Eh-1iT"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gH9-V9-ZMu">
+                                                            <rect key="frame" x="405" y="267" width="49" height="18"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <buttonCell key="cell" type="check" title="开启" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="uZ5-7C-in8">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="checkBoxDidClicked:" target="POJ-O2-DLd" id="MeK-rp-Q4d"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YfJ-nf-d2Y">
+                                                            <rect key="frame" x="405" y="421" width="49" height="18"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <buttonCell key="cell" type="check" title="开启" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="e18-wm-GeO">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="checkBoxDidClicked:" target="POJ-O2-DLd" id="0X1-Up-yo6"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C1H-vy-PTv">
+                                                            <rect key="frame" x="197" y="421" width="49" height="18"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <buttonCell key="cell" type="check" title="开启" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="XcM-Tm-DhL">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="checkBoxDidClicked:" target="POJ-O2-DLd" id="uw6-nh-tWJ"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2HB-gZ-y2j">
+                                                            <rect key="frame" x="6" y="421" width="49" height="18"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <buttonCell key="cell" type="check" title="开启" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="1IL-S4-PbE">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="checkBoxDidClicked:" target="POJ-O2-DLd" id="m2X-nl-kDU"/>
+                                                            </connections>
+                                                        </button>
+                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BBn-XU-NUm">
+                                                            <rect key="frame" x="246" y="252" width="48" height="48"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="SplitScreen" id="NFB-Eb-dfy"/>
+                                                        </imageView>
+                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i2v-uc-vxd">
+                                                            <rect key="frame" x="235" y="228" width="71" height="16"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <textFieldCell key="cell" lineBreakMode="clipping" title="快捷键设置" id="q8M-Df-ZBz">
+                                                                <font key="font" usesAppearanceFont="YES"/>
+                                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                        </textField>
+                                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="csF-m2-A6h">
+                                                            <rect key="frame" x="197" y="112" width="49" height="18"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <buttonCell key="cell" type="check" title="开启" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="nJz-45-VxL">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="checkBoxDidClicked:" target="POJ-O2-DLd" id="GFD-Th-Pia"/>
+                                                            </connections>
+                                                        </button>
+                                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lco-Th-x5u" customClass="MASShortcutView">
+                                                            <rect key="frame" x="58" y="420" width="90" height="19"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        </customView>
+                                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yyS-A8-DaW" customClass="MASShortcutView">
+                                                            <rect key="frame" x="455" y="111" width="90" height="19"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        </customView>
+                                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LhJ-CQ-iHe">
+                                                            <rect key="frame" x="405" y="112" width="49" height="18"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <buttonCell key="cell" type="check" title="开启" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="1oB-v9-qFj">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="checkBoxDidClicked:" target="POJ-O2-DLd" id="lRS-42-Tqh"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </customView>
+                                            </subviews>
+                                        </view>
+                                    </tabViewItem>
+                                </tabViewItems>
+                            </tabView>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="bottomFullRadio" destination="Q7G-Ck-024" id="Q8m-gd-ldj"/>
+                        <outlet property="bottomHalfFullBottomRadio" destination="P2l-Tf-iNv" id="t23-Hp-4l3"/>
+                        <outlet property="bottomHalfFullRadio" destination="bjK-1C-IFw" id="TdE-fG-u7n"/>
+                        <outlet property="bottomImageVIew" destination="ff0-Ds-QcJ" id="Ag9-4b-mPK"/>
+                        <outlet property="bottomShortcutView" destination="9MS-cd-xhf" id="Jug-ia-uYE"/>
+                        <outlet property="enableBottomCheckBox" destination="csF-m2-A6h" id="FVI-A4-37V"/>
+                        <outlet property="enableLeftBottomCheckBox" destination="3zd-wo-A9T" id="Rh3-Su-btp"/>
+                        <outlet property="enableLeftCheckBox" destination="5vY-II-75V" id="sR0-7Y-Sir"/>
+                        <outlet property="enableLeftTopCheckBox" destination="2HB-gZ-y2j" id="mzc-wf-hYw"/>
+                        <outlet property="enableRightBottomCheckBox" destination="LhJ-CQ-iHe" id="duC-Fn-hQe"/>
+                        <outlet property="enableRightCheckBox" destination="gH9-V9-ZMu" id="Gfj-Y0-z1u"/>
+                        <outlet property="enableRightTopCheckBox" destination="YfJ-nf-d2Y" id="5wO-wn-5Qo"/>
+                        <outlet property="enableTopCheckBox" destination="C1H-vy-PTv" id="I8T-3N-wPF"/>
+                        <outlet property="leftBottomImageView" destination="vsz-3i-KBR" id="ppK-k9-4Ms"/>
+                        <outlet property="leftBottomShortcutView" destination="ceg-6v-j90" id="Umt-XZ-V9K"/>
+                        <outlet property="leftImageView" destination="nK5-tS-HvN" id="q7q-Ui-wwo"/>
+                        <outlet property="leftShortcutView" destination="cVu-KZ-PPS" id="Dw9-jN-yYv"/>
+                        <outlet property="leftTopImageView" destination="DcR-2D-xvI" id="Nbj-1R-dFB"/>
+                        <outlet property="leftTopShortcutView" destination="Lco-Th-x5u" id="uMT-4H-Bhq"/>
+                        <outlet property="mouseBottomCheckBox" destination="Ry6-ft-mpt" id="GLm-nY-Gnw"/>
+                        <outlet property="mouseLeftBottomCheckBox" destination="oc4-K7-7hk" id="l4w-Nx-9AT"/>
+                        <outlet property="mouseLeftCheckBox" destination="EHZ-99-AFA" id="113-Qg-eo3"/>
+                        <outlet property="mouseLeftTopCheckBox" destination="wgD-iS-StA" id="2qH-El-fc0"/>
+                        <outlet property="mouseRightBottomCheckBox" destination="gy6-cM-kD6" id="HEJ-69-meN"/>
+                        <outlet property="mouseRightCheckBox" destination="ax1-mg-7Aa" id="Umf-eK-31p"/>
+                        <outlet property="mouseRightTopCheckBox" destination="Q9b-bg-qgv" id="8qW-Wv-UZw"/>
+                        <outlet property="mouseTopCheckBox" destination="mzl-ww-W0o" id="FzW-dC-cHf"/>
+                        <outlet property="rightBottomImageView" destination="K5I-mg-wCN" id="B3Z-5b-aLi"/>
+                        <outlet property="rightBottomShortcutView" destination="yyS-A8-DaW" id="otB-xh-gxk"/>
+                        <outlet property="rightImageView" destination="1hu-14-RSo" id="kmV-0V-dju"/>
+                        <outlet property="rightShortcutView" destination="4aP-ah-VWH" id="ri5-tH-aPt"/>
+                        <outlet property="rightTopImageView" destination="chx-e0-Eom" id="NOR-zA-DBd"/>
+                        <outlet property="rightTopShortcutView" destination="06g-gJ-r2X" id="ErI-9o-QpR"/>
+                        <outlet property="topFullRadio" destination="IDn-wC-Y7g" id="Lg9-zj-jhf"/>
+                        <outlet property="topHalfFullBottomRadio" destination="wrg-ST-4xx" id="qOZ-Yz-SHc"/>
+                        <outlet property="topHalfFullRadio" destination="d2x-Qg-iIk" id="s6D-kK-jpV"/>
+                        <outlet property="topImageVIew" destination="1mf-0b-Qb8" id="7rL-9e-JvL"/>
+                        <outlet property="topShortcutView" destination="5r3-fw-6lU" id="Nbd-1G-r2c"/>
+                    </connections>
+                </viewController>
+                <customObject id="euJ-RT-5VD" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1095" y="527"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="NSColorPanel" width="32" height="32"/>
+        <image name="NSGoLeftTemplate" width="9" height="12"/>
+        <image name="NSGoRightTemplate" width="9" height="12"/>
+        <image name="NSNetwork" width="32" height="32"/>
+        <image name="NSTouchBarGoBackTemplate" width="10" height="30"/>
+        <image name="NSTouchBarGoDownTemplate" width="16" height="30"/>
+        <image name="NSTouchBarGoForwardTemplate" width="10" height="30"/>
+        <image name="NSTouchBarGoUpTemplate" width="16" height="30"/>
+        <image name="SplitScreen" width="18" height="18"/>
+    </resources>
+</document>

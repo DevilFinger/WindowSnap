@@ -1,0 +1,20 @@
+PODS:
+  - DFAXUIElement (1.0.7)
+  - MASShortcut (2.4.0)
+
+DEPENDENCIES:
+  - DFAXUIElement
+  - MASShortcut
+
+SPEC REPOS:
+  trunk:
+    - DFAXUIElement
+    - MASShortcut
+
+SPEC CHECKSUMS:
+  DFAXUIElement: b9eb7e36d76492ed97a3f2feac099035e3ab0420
+  MASShortcut: d9e4909e878661cc42877cc9d6efbe638273ab57
+
+PODFILE CHECKSUM: f26786486f4d675766e6958cbcb348b01e34c6de
+
+COCOAPODS: 1.10.1
