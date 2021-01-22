@@ -38,7 +38,7 @@ class DFAboutViewController: NSViewController {
             let build = dict["CFBundleVersion"] as? String
             
             if let  version = version, let build = build{
-                versionLbl.stringValue = "V\(version)(Build:1\(build)"
+                versionLbl.stringValue = "V\(version)(Build:\(build))"
             }
         }
         

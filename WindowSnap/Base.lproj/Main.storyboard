@@ -108,7 +108,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JXK-8I-3Iq">
                                 <rect key="frame" x="-2" y="84" width="454" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="V1.0(Build:1)" id="Q32-Zj-3mj">
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="V1.0(Build:2)" id="Q32-Zj-3mj">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -134,7 +134,7 @@
                 </viewController>
                 <customObject id="3On-gs-WLo" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-232" y="25"/>
+            <point key="canvasLocation" x="-491" y="89"/>
         </scene>
         <!--Help View Controller-->
         <scene sceneID="J6F-Ww-Cjl">

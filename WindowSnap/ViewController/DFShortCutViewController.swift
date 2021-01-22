@@ -401,7 +401,7 @@ extension DFShortCutViewController{
     private static func _register(shortcut:MASShortcut?, action:@escaping ()->Void) {
         if let sc = shortcut{
             if let isReg = MASShortcutMonitor.shared()?.isShortcutRegistered(sc){
-                if isReg{
+                if !isReg{
                     MASShortcutMonitor.shared()?.register(sc, withAction: action)
                 }
             }

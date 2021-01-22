@@ -10,6 +10,7 @@ import Cocoa
 import AVFoundation
 import ApplicationServices.HIServices.Processes
 import DFAXUIElement
+import MASShortcut
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
@@ -48,30 +49,16 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
     }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        //2.快捷键
         
-        //3.一键最小化 -- show desktop
-        
-        //4.一键自动化分屏 - 1.设置同程序左右分割， 2.设置同程序叠加，3.随机
-        
-        //1.自定义 - 1.均分【多少行，多少列】 2.不均分。设置一共多少个。设置大小
-        
-        //设置hotkey界面
-        // 整理AXUI的类
-        // 整理按键模拟
-        // 整理苹果apple script
-        // 整理自启动
-        // 整理无window，only in menu的文档
-        
-        
-     
+        DFShortCutViewController.regiseterAllWithDefault()
+        DFMouseAreaHelper.helper.setupAll()
+        DFAreaSizeHelper.helper.setupTopAreaSize()
+        DFAreaSizeHelper.helper.setupBottomAreaSize()
         
         launchAtLoginMenu.state = DFLaunchAgentHelper.enabled() ? .on : .off
-        let _ = NSEvent.addGlobalMonitorForEvents(matching: [.leftMouseUp, .leftMouseDown, .leftMouseDragged]) { (event : NSEvent) in
-            DFShortCutViewController.regiseterAllWithDefault()
-            DFMouseAreaHelper.helper.setupAll()
-            DFAreaSizeHelper.helper.setupTopAreaSize()
-            DFAreaSizeHelper.helper.setupBottomAreaSize()
+        let _ = NSEvent.addGlobalMonitorForEvents(matching: [.leftMouseUp, .leftMouseDown, .leftMouseDragged]) {
+            (event : NSEvent) in
+            
             DFMouseMonitorManger.shared.moniter(event: event)
             
         }

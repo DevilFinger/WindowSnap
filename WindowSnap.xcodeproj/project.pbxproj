@@ -417,6 +417,7 @@
 				CODE_SIGN_ENTITLEMENTS = WindowSnap/WindowSnap.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = A2APD4VYNX;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = WindowSnap/Info.plist;
@@ -425,6 +426,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = DevilFingerTeam.WindowSnap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "WindowSnap/WindowSnap-Bridging-Header.h";
@@ -443,6 +445,7 @@
 				CODE_SIGN_ENTITLEMENTS = WindowSnap/WindowSnap.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = A2APD4VYNX;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = WindowSnap/Info.plist;
@@ -451,6 +454,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = DevilFingerTeam.WindowSnap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "WindowSnap/WindowSnap-Bridging-Header.h";
